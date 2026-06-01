@@ -1,0 +1,13 @@
+# API Laravel uniquement — pas de build Vite (frontend = dépôt séparé).
+providers = ["php"]
+
+[phases.install]
+cmds = [
+  "composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev --ignore-platform-reqs",
+]
+
+[phases.build]
+cmds = []
+
+[start]
+cmd = "bash scripts/railway-start.sh"
